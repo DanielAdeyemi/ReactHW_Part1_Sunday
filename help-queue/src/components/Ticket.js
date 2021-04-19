@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function Ticket(props) {
   return (
@@ -10,4 +11,9 @@ function Ticket(props) {
   );
 }
 
+Ticket.propTypes = {
+  names: PropTypes.string,
+  location: PropTypes.string,
+  issue: PropTypes.string
+};
 export default Ticket;
