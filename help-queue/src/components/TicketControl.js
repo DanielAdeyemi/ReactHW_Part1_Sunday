@@ -28,7 +28,6 @@ handleClick = () => {
     return(
       <>
         {currentlyVisibleState}
-        {addTicketButton}
         <button onClick={this.handleClick}>{buttonText} </button>
       </>
     );
