@@ -6,7 +6,9 @@ export default class TicketControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage : false
+      formVisibleOnPage : false,
+      masterTicketList : [],
+      selectedTicket : null
     };
   }
 
