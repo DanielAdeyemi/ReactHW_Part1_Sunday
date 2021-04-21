@@ -17,6 +17,11 @@ handleClick = () => {
     formVisibleOnPage: !prevState.formVisibleOnPage}));
 }
 
+handleChangingSelectedTicket = (id) => {
+  const selectedTicket = this.state.masterTicketList.filter(ticket => ticket.id === id) [0];
+  this.setState({selectedTicket: selectedTicket});
+}
+
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
