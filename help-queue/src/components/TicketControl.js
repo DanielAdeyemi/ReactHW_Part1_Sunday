@@ -25,11 +25,16 @@ handleChangingSelectedTicket = (id) => {
   render() {
     let currentlyVisibleState = null;
     let buttonText = null;
-    if(this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewTicketForm />
+    if (this.state.selectedTicket != null) {
+      currentlyVisibleState = <TicketDetail ticket = {this.state.selectedTicket}/>
+      buttonText = "Return to ticket list";
+    }
+    else if(this.state.formVisibleOnPage) {
+      currentlyVisibleState = <NewTicketForm onNewTicketCreation={this.handleAddingNewTicketToList} />
       buttonText = "Return to the ticket list";
     } else {
-      currentlyVisibleState = <TicketList />
+      currentlyVisibleState = <TicketList ticketList={this.state.masterTicketList} 
+        onTicketSelection={this.handleChangingSelectedTicket} />;
       buttonText = "Add Ticket";
     }
     return(
