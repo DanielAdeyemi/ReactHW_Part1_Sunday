@@ -60,7 +60,8 @@ export default class TicketControl extends React.Component {
 		if (this.state.selectedTicket != null) {
 			currentlyVisibleState = (
 				<TicketDetail ticket={this.state.selectedTicket} 
-				oncClickingDelete = {this.handleDeletingTicket} />
+				oncClickingDelete = {this.handleDeletingTicket}
+				onClickingEdit = {this.handleEditClick} />
 			);
 			buttonText = "Return to ticket list";
 		} else if (this.state.formVisibleOnPage) {
