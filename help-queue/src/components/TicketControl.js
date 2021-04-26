@@ -31,6 +31,15 @@ export default class TicketControl extends React.Component {
 		this.setState({editing: true});
 	}
 
+	handleEditingTicketInList = (ticketToEdit) => {
+		const editedMasterTicketList = this.state.masterTicketList.filter(ticket => ticket.id !== this.selectedTicket.id).concat(ticketToEdit);
+		this.setState({
+			masterTicketList: editedMasterTicketList,
+			editing: false,
+			selectedTicket: null
+		});
+	}
+
 	handleAddingNewTicketToList = (newTicket) => {
 		const newMasterTicketList = this.state.masterTicketList.concat(newTicket);
 		this.setState({
