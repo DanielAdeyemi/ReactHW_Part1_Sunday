@@ -50,7 +50,7 @@ export default class TicketControl extends React.Component {
 		const newMasterTicketList = this.state.masterTicketList.filter(ticket => ticket.id !== id);
 		this.setState({
 			masterTicketList: newMasterTicketList,
-			selectedTicket = null
+			selectedTicket: null
 		}); 
 	}
 

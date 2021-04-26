@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 
 export default function TicketList(props) {
   return (
-    <React.Fragment>
+    <>
       <hr />
-      {props.TicketList.map((ticket) =>
+      {props.ticketList.map((ticket) =>
         <Ticket 
 					whenTickedClicked = {props.onTicketSelection}
 					names={ticket.names}
@@ -15,11 +15,12 @@ export default function TicketList(props) {
 					id={ticket.id}
           key={ticket.id} />
       )}
-    </React.Fragment>
+    </>
   );
 }
 
 TicketList.propTypes = {
 	TicketList : PropTypes.array,
-	onTicketSelection: PropTypes.func
+	onTicketSelection: PropTypes.func,
+  ticket: PropTypes.object
 }
