@@ -10,6 +10,7 @@ export default class TicketControl extends React.Component {
 			formVisibleOnPage: false,
 			masterTicketList: [],
 			selectedTicket: null,
+			editing: false
 		};
 	}
 

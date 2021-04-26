@@ -12,9 +12,6 @@ export default function NewTicketForm(props) {
 			issue: event.target.issue.value,
 			id: v4(),
 		});
-		console.log(event.target.names.value);
-		console.log(event.target.location.value);
-		console.log(event.target.issue.value);
 	}
 	return (
 		<>
