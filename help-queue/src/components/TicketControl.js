@@ -1,6 +1,7 @@
 import React from "react";
 import NewTicketForm from "./NewTicketForm";
 import TicketList from "./TicketList";
+import TicketDetail from "./TicketDetail";
 
 export default class TicketControl extends React.Component {
 	constructor(props) {
@@ -39,6 +40,14 @@ export default class TicketControl extends React.Component {
 		)[0];
 		this.setState({ selectedTicket: selectedTicket });
 	};
+
+	handleDeletingTicket = (id) => {
+		const newMasterTicketList = this.state.masterTicketList.filter(ticket => ticket.id !== id);
+		this.setState({
+			masterTicketList: newMasterTicketList,
+			selectedTicket = null
+		}); 
+	}
 
 	render() {
 		let currentlyVisibleState = null;
