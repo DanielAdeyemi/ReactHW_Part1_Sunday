@@ -2,6 +2,7 @@ import React from "react";
 import NewTicketForm from "./NewTicketForm";
 import TicketList from "./TicketList";
 import TicketDetail from "./TicketDetail";
+import EditTicket from "./EditTicketForm";
 
 export default class TicketControl extends React.Component {
 	constructor(props) {
@@ -66,7 +67,11 @@ export default class TicketControl extends React.Component {
 	render() {
 		let currentlyVisibleState = null;
 		let buttonText = null;
-		if (this.state.selectedTicket != null) {
+		if (this.state.editing) {
+			currentlyVisibleState = <EditTicketForm ticket = {this.state.selectedTicket} />
+			buttonText = "Return to Ticket List"
+		}
+		else if (this.state.selectedTicket != null) {
 			currentlyVisibleState = (
 				<TicketDetail ticket={this.state.selectedTicket} 
 				oncClickingDelete = {this.handleDeletingTicket}
