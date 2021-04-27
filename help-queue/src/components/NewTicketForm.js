@@ -10,18 +10,19 @@ export default function NewTicketForm(props) {
 			names: event.target.names.value,
 			location: event.target.location.value,
 			issue: event.target.issue.value,
-			id: v4(),
+			id: v4()
 		});
 	}
 	return (
 		<>
 			<ReusableForm
-			formSubmissionHandler="{handleNewTicketFormSubmission}"
-			buttonText="Help!" />
+				formSubmissionHandler={handleNewTicketFormSubmission}
+				buttonText="Help!"
+			/>
 		</>
 	);
 }
 
 NewTicketForm.propTypes = {
-	onNewTicketCreation: PropTypes.func,
+	onNewTicketCreation: PropTypes.func
 };
