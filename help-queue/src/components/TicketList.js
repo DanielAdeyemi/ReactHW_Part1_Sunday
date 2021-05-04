@@ -6,7 +6,7 @@ export default function TicketList(props) {
   return (
     <>
       <hr />
-      {props.ticketList.map((ticket) =>
+      {Object.values(props.ticketList).map((ticket) =>
         <Ticket 
 					whenTickedClicked = {props.onTicketSelection}
 					names={ticket.names}
@@ -20,7 +20,6 @@ export default function TicketList(props) {
 }
 
 TicketList.propTypes = {
-	TicketList : PropTypes.array,
-	onTicketSelection: PropTypes.func,
-  ticket: PropTypes.object
+	ticketList : PropTypes.object,
+	onTicketSelection: PropTypes.func
 }
