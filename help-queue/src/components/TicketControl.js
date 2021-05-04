@@ -72,13 +72,13 @@ class TicketControl extends React.Component {
 	};
 
 	handleDeletingTicket = (id) => {
-		const newMasterTicketList = this.state.masterTicketList.filter(
-			(ticket) => ticket.id !== id
-		);
-		this.setState({
-			masterTicketList: newMasterTicketList,
-			selectedTicket: null
-		});
+		const { dispatch } = this.props;
+		const action = {
+			type: 'DELETE_TICKET',
+			id: id
+		}
+		dispatch(action);
+		this.setState({ selectedTicket: null });
 	};
 
 	render() {
