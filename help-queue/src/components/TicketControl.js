@@ -128,7 +128,8 @@ TicketControl.propTypes = {
 
 const mapStateToProps = state => {
 	return {
-		masterTicketList: state
+		masterTicketList: state.masterTicketList,
+		formVisibleOnPage: state.formVisibleOnPage
 	}
 }
 TicketControl = connect(mapStateToProps)(TicketControl);
