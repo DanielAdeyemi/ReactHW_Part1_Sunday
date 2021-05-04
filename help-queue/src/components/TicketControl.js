@@ -107,7 +107,7 @@ class TicketControl extends React.Component {
 		} else {
 			currentlyVisibleState = (
 				<TicketList
-					ticketList={this.state.masterTicketList}
+					ticketList={this.props.masterTicketList}
 					onTicketSelection={this.handleChangingSelectedTicket}
 				/>
 			);
