@@ -123,5 +123,10 @@ class TicketControl extends React.Component {
 	}
 }
 
-TicketControl = connect()(TicketControl);
+const mapStateToProps = state => {
+	return {
+		masterTicketList: state
+	}
+}
+TicketControl = connect(mapStateToProps)(TicketControl);
 export default TicketControl;
