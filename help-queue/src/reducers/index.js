@@ -7,7 +7,7 @@ import { firebaseReducer } from 'react-redux-firebase';
 const rootReducer = combineReducers({
   formVisibleOnPage: formVisibleReducer,
   masterTicketList: ticketListReducer,
-  firestore: firebaseReducer
+  firestore: firestoreReducer
 });
 
 export default rootReducer;
